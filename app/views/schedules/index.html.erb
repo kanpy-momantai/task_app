@@ -1,0 +1,43 @@
+<h3>スケジュール一覧</h3>
+<table>
+ <tr>
+  <th>ID</th>
+  <th>タイトル</th>
+  <th>開始日</th>
+  <th>終了日</th>
+  <th>終日</th>
+  <th>スケジュール更新日時</th>
+  <th>確認</th>
+  <th>編集</th>
+  <th>削除</th>
+ </tr>
+
+
+<tbody>
+ <% @schedules.each do |schedule| %>
+ <tr>
+  <td><%= schedule.id %></td>
+  <td><%= schedule.title %></td>
+  <td><%= schedule.start %></td>
+  <td><%= schedule.end %></td>
+  <% if schedule.allday == true then %>
+  <td>○</td>
+  <% else %>
+  <td> </td>
+  <% end %>
+  <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+  <td><%= link_to "確認",schedule,class:"link" %></td>
+  <td><%= link_to "編集",[:edit,schedule],class:"link"%></td>
+  <td>
+  <%= link_to "削除", schedule, method: :delete, data: { confirm: "本当に削除しますか？" },class:"link" %>
+  </td>
+ </tr>
+ <% end %>
+</tbody>
+</table>
+
+<p><%= link_to "スケジュール新規登録",:new_schedule, class:"link" %></p>
+
+<footer>
+ <h1>現在の日時:<%= Time.now.strftime("%Y年%m月%d日") %> スケジュールの合計:<%= Schedule.count %></h1>
+</footer>

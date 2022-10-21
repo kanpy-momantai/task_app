@@ -1,0 +1,42 @@
+ body{
+     min-height: 100vh;
+     box-sizing: border-box;
+     position: relative;
+     padding-bottom:120px;
+ }
+ header{
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 30px;
+   color:white;
+   background-color: red;
+ }
+ 
+ table th{
+   background-color: #fa9189;
+   padding: 10px 20px;
+   text-align:center
+ }
+ 
+ table td{
+   background-color: #e6cac8;
+   padding: 10px 20px;
+   text-align:center
+ }
+ 
+ footer{
+   width: 100%;
+   color:white;
+   background-color: red;
+   margin-bottom: 30px;
+   position: absolute;
+   bottom: 0;
+ }
+ 
+ .link{
+     text-decoration: none;
+ }
+ 
+ .choice{
+     list-style: none;
+ }
