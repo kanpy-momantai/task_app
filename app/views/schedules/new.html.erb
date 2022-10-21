@@ -16,7 +16,9 @@
         </tr>
         <tr>
             <th><%= f.label :allday,"終日"%></th>
-            <td><%= f.check_box :allday %></td>
+            <td><%= f.check_box :allday %></br>
+                終日の場合はチェックを入れます
+            </td>
         </tr>
         <tr>
             <th><%= f.label :memo,"スケジュールメモ"%></th>
@@ -25,10 +27,14 @@
     </table>
     
     <div>
-     <ul>
+     <ul class = "choice">
        <li><%= f.submit "スケジュールを新規登録する"%></li>
-       <li><%= link_to "スケジュール一覧に戻る",:schedules %></li>
+       <li><%= link_to "スケジュール一覧に戻る",:schedules,class:"link"%></li>
      </ul>
    </div>
+   
+    <footer>
+      <h1>現在の日時:<%= Time.now.strftime("%Y年%m月%d日") %></h1>
+    </footer>
     
 <% end %>
